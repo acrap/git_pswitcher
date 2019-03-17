@@ -64,27 +64,6 @@ func (db JsonFileDb) WriteProfiles(profiles []Profile) error {
 	return nil
 }
 
-//DeleteProfile function to remove profile by name
-func (db JsonFileDb) DeleteProfile(name string) error {
-	profiles, err := db.GetProfiles()
-	if err != nil {
-		return err
-	}
-	indElemToDelete := -1
-	for num, elem := range profiles {
-		if elem.Name == name {
-			indElemToDelete = num
-			break
-		}
-	}
-	if indElemToDelete < 0 {
-		return fmt.Errorf("Element not found")
-	}
-	profiles = append(profiles[:indElemToDelete], profiles[indElemToDelete+1])
-	err = db.WriteProfiles(profiles)
-	return err
-}
-
 //AddProfile add new profile to db
 func (db JsonFileDb) AddProfile(p Profile, force bool) error {
 	var err error

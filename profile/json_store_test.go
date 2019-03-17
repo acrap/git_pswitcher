@@ -38,7 +38,7 @@ func TestDelete(t *testing.T) {
 		Profile{Name: "3", Email: "jsahd3@as.com"}}); err != nil {
 		t.Errorf("Can't write one profile: %s", err)
 	}
-	db.DeleteProfile("2")
+	db.RemoveProfile("2")
 	profiles, err = db.GetProfiles()
 	if err != nil {
 		t.Errorf("Can't get the profiles: %s", err)

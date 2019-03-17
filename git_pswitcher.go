@@ -19,11 +19,10 @@ var (
 // our main function
 func main() {
 	app := cli.NewApp()
-	app.Version = "0.1"
 	app.Author = "Andrey Strunin"
 	app.Email = "acrapmonster@gmail.com"
 	app.Usage = ""
-	app.Version = "0.1.1"
+	app.Version = "0.1.2"
 	app.Name = "git_pswitcher - Git profile switcher written on Go"
 	app.Description = "git_pswitcher is an utility to keep git profiles and easily switch between them"
 	app.Flags = []cli.Flag{
